@@ -13,7 +13,7 @@ install_homebrew() {
 
 # Function to download Brewfile and run brew bundle
 setup_environment() {
-    echo "Downloading Anjan's Awesome Brewfile..."
+    echo "Downloading AJ's Awesome Brewfile..."
     curl -O https://raw.githubusercontent.com/AnjanJ/my-mac-settings/main/Brewfile
 
     echo "Running brew bundle to install software..."
