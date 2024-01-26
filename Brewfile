@@ -24,6 +24,7 @@ brew "libtool"
 brew "libffi"
 brew "libxmlsec1"
 brew "libyaml"
+brew "sqlite"
 brew "mas"
 brew "mysql", restart_service: true
 brew "pkg-config"
@@ -111,6 +112,7 @@ mas "Bandwidth+", id: 490461369
 mas "Dashlane", id: 517914548
 mas "GarageBand", id: 682658836
 mas "Hand Mirror", id: 1502839586
+mas "Hidden Bar", id: 1452453066
 mas "iMovie", id: 408981434
 mas "iStat Menus", id: 1319778037
 mas "Keynote", id: 409183694
