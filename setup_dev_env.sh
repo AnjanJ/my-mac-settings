@@ -20,8 +20,33 @@ setup_environment() {
     brew bundle --file=Brewfile
 }
 
+# Function to install latest Ruby using rbenv
+install_latest_ruby() {
+    echo "Installing the latest Ruby version using rbenv..."
+    rbenv install $(rbenv install -l | grep -v - | tail -1)
+    rbenv global $(rbenv install -l | grep -v - | tail -1)
+
+    echo "Installing latest version of Rails..."
+    gem install rails
+    rbenv rehash
+}
+
+# Function to install latest stable Node.js version using nodenv
+install_latest_node() {
+    echo "Installing the latest stable Node.js version using nodenv..."
+    # Filter for stable versions and install the latest one
+    nodenv install $(nodenv install -l | grep -v - | grep -E '^[0-9.]+$' | tail -1)
+    nodenv global $(nodenv install -l | grep -v - | grep -E '^[0-9.]+$' | tail -1)
+
+    echo "Installing Yarn..."
+    npm install --global yarn
+}
+
+
 # Main Script Execution
 install_homebrew
 setup_environment
+install_latest_ruby
+install_latest_node
 
 echo "Development environment setup complete."

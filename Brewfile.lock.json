@@ -1870,6 +1870,50 @@
       "heroku/brew/heroku": {
         "version": "8.5.0",
         "bottle": false
+      },
+      "sqlite": {
+        "version": "3.45.0",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_sonoma": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:0257a189a2b5609bb8d2dfecfe23174e868a9b1c65bd621ffdfb24483821b6df",
+              "sha256": "0257a189a2b5609bb8d2dfecfe23174e868a9b1c65bd621ffdfb24483821b6df"
+            },
+            "arm64_ventura": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:2d9deb84364a7b9404528e171243a591ccc6cb8b4ba73433ec57fd0817b57615",
+              "sha256": "2d9deb84364a7b9404528e171243a591ccc6cb8b4ba73433ec57fd0817b57615"
+            },
+            "arm64_monterey": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:d210de870cbd6765861dd5feb1158c819491dcf46ee8795149dbb2f49b693844",
+              "sha256": "d210de870cbd6765861dd5feb1158c819491dcf46ee8795149dbb2f49b693844"
+            },
+            "sonoma": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:6fac6907a3c95224261a411185e71a23f85feefba3cbf94b5959407d475a77a0",
+              "sha256": "6fac6907a3c95224261a411185e71a23f85feefba3cbf94b5959407d475a77a0"
+            },
+            "ventura": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:9ac3dc7027c4843de5a4f3b035f2af7b2434f5a2d11d9836a7d2e5f64c332cdb",
+              "sha256": "9ac3dc7027c4843de5a4f3b035f2af7b2434f5a2d11d9836a7d2e5f64c332cdb"
+            },
+            "monterey": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:4a1d78cb59cf42269fde057de8568f39ff8190850a06b75758044a969987ebde",
+              "sha256": "4a1d78cb59cf42269fde057de8568f39ff8190850a06b75758044a969987ebde"
+            },
+            "x86_64_linux": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:b31a8f263ba62359789b56e9e6a646b7dcb2ad962933b372656c9c8e7ed55d3e",
+              "sha256": "b31a8f263ba62359789b56e9e6a646b7dcb2ad962933b372656c9c8e7ed55d3e"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -2132,7 +2176,7 @@
         }
       },
       "raycast": {
-        "version": "1.66.0",
+        "version": "1.66.1",
         "options": {
           "full_name": "raycast"
         }
@@ -2296,6 +2340,10 @@
       "Tot": {
         "id": "1491071483",
         "version": "1.5.1"
+      },
+      "Hidden Bar": {
+        "id": "1452453066",
+        "version": "1.8"
       }
     },
     "vscode": {
