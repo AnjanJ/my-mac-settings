@@ -1,4 +1,4 @@
-# README for `setup_dev_env.sh`
+# README for `setup_dev_env.sh` & `auto_update_Brewfile.sh`
 
 ## Overview
 
@@ -28,13 +28,17 @@ Open `setup_dev_env.sh` in a text editor and replace `[YOUR_BREWFILE_URL]` with 
 
 Before running the script, you need to give it execute permissions. This can be done by navigating to the directory containing the script and running the following command in the terminal:
 
-    chmod +x setup_dev_env.sh
+```shell
+chmod +x setup_dev_env.sh
+```
 
 ### 5. Run the Script
 
 Execute the script by running:
 
-    ./setup_dev_env.sh
+```shell
+./setup_dev_env.sh
+```
 
 The script will then proceed to check for Homebrew, install it if necessary, download your Brewfile, and install the listed software.
 
@@ -53,7 +57,9 @@ To view the list of scheduled cron jobs:
 1. Open the Terminal.
 2. Run the command:
 
-   crontab -l
+```shell
+crontab -l
+```
 
 3. This will display all current cron jobs for your user. If no jobs are scheduled, it may return no output.
 
@@ -64,13 +70,17 @@ To schedule your `auto_update_Brewfile.sh` script to run automatically:
 1. Open Terminal.
 2. Edit your crontab by running:
 
-   crontab -e
+```shell
+crontab -e
+```
 
 3. In the crontab editor, add a line to schedule the script. For instance, to run it every Friday and Sunday at 7 PM:
 
-   0 19 \* \* 5,0 /path/to/backup_brewfile.sh
+```shell
+0 19 * * 5,0 /path/to/auto_update_Brewfile.sh
+```
 
-   Ensure you replace `/path/to/auto_update_Brewfile.sh` with the actual path to your script.
+Ensure you replace `/path/to/auto_update_Brewfile.sh` with the actual path to your script.
 
 4. Save and close the editor.
 
@@ -81,7 +91,9 @@ Your script must be executable:
 1. Navigate to the directory containing `auto_update_Brewfile.sh`.
 2. Run the command:
 
-   chmod +x auto_update_Brewfile.sh
+```shell
+chmod +x auto_update_Brewfile.sh
+```
 
 3. This will set the script as executable.
 
@@ -92,11 +104,12 @@ Your script must be executable:
 - Regularly check your cron jobs and script logs to ensure they are running as expected.
 - For troubleshooting cron jobs, check the syslog for cron-related messages:
 
-  grep CRON /var/log/syslog
+```shell
+grep CRON /var/log/syslog
+```
 
 By following these steps, you can effectively manage and automate your Brewfile backup process.
 
 ## Conclusion
 
-This script simplifies the process of setting up a development environment on macOS, making it an efficient and hassle-free experience.
-Also it helps to backup your BREWFILE which keeps all the new apps you install using brew or mac app store.
+This script simplifies the process of setting up a development environment on macOS, making it an efficient and hassle-free experience. Also, it helps to backup your BREWFILE, which keeps all the new apps you install using brew or the Mac App Store.
