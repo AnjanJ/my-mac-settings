@@ -25,10 +25,10 @@ cp "$BREWFILE_DIR/Brewfile" "$SETTINGS_REPO_DIR/Brewfile"
 ZSHRC_FILE="$HOME/.zshrc"
 
 # Check if .zshrc has changed in the past week
-if [ -f "$ZSHRC_FILE" ] && [ $(find "$ZSHRC_FILE" -mtime -7) ]; then
-    # Copy .zshrc to a different location
+if [ -f "$ZSHRC_FILE" ] && [ "$ZSHRC_FILE" -nt "$SETTINGS_REPO_DIR/.zshrc" ]; then
+    # Copy .zshrc to a the repo
     cp "$ZSHRC_FILE" "$SETTINGS_REPO_DIR/.zshrc"
-    echo "Copied .zshrc to $SETTINGS_REPO_DIR/.zshrc \n"
+    echo "Copied .zshrc to $SETTINGS_REPO_DIR/.zshrc"
 else
     echo "No changes detected in .zshrc in the past week."
 fi
