@@ -2,10 +2,10 @@
 
 ## Overview
 
-`setup_dev_env.sh` is a shell script designed to automate the setup of a development environment on macOS. 
+`setup_dev_env.sh` is a shell script designed to automate the setup of a development environment on macOS.
 It checks for the presence of Homebrew, installs it if absent, downloads a Brewfile from a specified URL, and then uses Homebrew to install all the software listed in the Brewfile.
 
-`auto_update_Brewfile.sh` is a script which automates the process of backing up the brewfile and uploading it to github repo. 
+`auto_update_Brewfile.sh` is a script which automates the process of updating apps installed via Homebrew, backing up the brewfile, backing up the .zshrc periodically and uploading it to github repo.
 We need to set proper cron task for the same as described in this readme.
 
 ## Prerequisites
@@ -106,11 +106,6 @@ chmod +x auto_update_Brewfile.sh
 - Test your script manually before relying on the cron schedule.
 - Ensure your script has the correct GitHub credentials if it's pushing to a repository.
 - Regularly check your cron jobs and script logs to ensure they are running as expected.
-- For troubleshooting cron jobs, check the syslog for cron-related messages:
-
-```shell
-grep CRON /var/log/syslog
-```
 
 By following these steps, you can effectively manage and automate your Brewfile backup process.
 
