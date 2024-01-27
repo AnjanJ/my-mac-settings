@@ -36,11 +36,16 @@ fi
 # Go to the settings repository directory
 cd "$SETTINGS_REPO_DIR"
 
-# Git add, commit, and push the new Brewfile
-echo "Commiting the changes to Github"
-git add .
-git commit -m "Ran Update & Backup task: $(date +'%Y-%m-%d %H:%M:%S')"
-git push
+# Check if there are changes to commit
+if [[ -n $(git status -s) ]]; then
+    # Git add, commit, and push the new Brewfile
+    echo "Commiting the changes to Github"
+    git add .
+    git commit -m "Ran Update & Backup task: $(date +'%Y-%m-%d %H:%M:%S')"
+    git push
+else
+    echo "No changes to commit."
+fi
 
 # Delete backup files older than 3 days
 find "$BREWFILE_DIR" -name 'OLDBrewfile_*' -mtime +3 -exec rm {} \;
