@@ -21,16 +21,23 @@ brew bundle dump --file="$BREWFILE_DIR/Brewfile" --force
 # Copy the new Brewfile to your settings repository
 cp "$BREWFILE_DIR/Brewfile" "$SETTINGS_REPO_DIR/Brewfile"
 
+# Define the path to your .zshrc file
+ZSHRC_FILE="$HOME/.zshrc"
+
 # Check if .zshrc has changed in the past week
-if [ -f "$HOME/.zshrc" ] && [ $(find "$HOME/.zshrc" -mtime -7) ]; then
-    # Copy .zshrc to a repo for backup
-    cp "$HOME/.zshrc" "$SETTINGS_REPO_DIR/.zshrc"
+if [ -f "$ZSHRC_FILE" ] && [ $(find "$ZSHRC_FILE" -mtime -7) ]; then
+    # Copy .zshrc to a different location
+    cp "$ZSHRC_FILE" "$SETTINGS_REPO_DIR/.zshrc"
+    echo "Copied .zshrc to $SETTINGS_REPO_DIR/.zshrc"
+else
+    echo "No changes detected in .zshrc in the past week."
 fi
 
 # Go to the settings repository directory
 cd "$SETTINGS_REPO_DIR"
 
 # Git add, commit, and push the new Brewfile
+echo "Commiting the changes to Github"
 git add .
 git commit -m "Ran Update & Backup task: $(date +'%Y-%m-%d %H:%M:%S')"
 git push
