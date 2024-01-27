@@ -8,6 +8,14 @@ It checks for the presence of Homebrew, installs it if absent, downloads a Brewf
 `auto_update_Brewfile.sh` is a script which automates the process of updating apps installed via Homebrew, backing up the brewfile, backing up the .zshrc periodically and uploading it to github repo.
 We need to set proper cron task for the same as described in this readme.
 
+### Caution
+
+Do not maintain secrets or any other sensitive information directly in your ``.zshrc``. If you must do so maintain your secrets in other file and load that in your .zshrc.
+
+## OR
+
+Remove the code is script which corresponds to backing up your .zshrc files.
+
 ## Prerequisites
 
 - macOS operating system.
