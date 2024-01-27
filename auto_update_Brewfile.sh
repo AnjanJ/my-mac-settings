@@ -6,6 +6,12 @@ BREWFILE_DIR=~/
 # Define the path to your settings repository
 SETTINGS_REPO_DIR=~/code/my-mac-settings
 
+# Update Homebrew
+brew update
+
+# Upgrade installed formulae
+brew upgrade
+
 # Backup existing Brewfile
 mv "$BREWFILE_DIR/Brewfile" "$BREWFILE_DIR/OLDBrewfile_$(date +'%Y%m%d')"
 
@@ -15,12 +21,18 @@ brew bundle dump --file="$BREWFILE_DIR/Brewfile" --force
 # Copy the new Brewfile to your settings repository
 cp "$BREWFILE_DIR/Brewfile" "$SETTINGS_REPO_DIR/Brewfile"
 
+# Check if .zshrc has changed in the past week
+if [ -f "$HOME/.zshrc" ] && [ $(find "$HOME/.zshrc" -mtime -7) ]; then
+    # Copy .zshrc to a repo for backup
+    cp "$HOME/.zshrc" "$SETTINGS_REPO_DIR/.zshrc"
+fi
+
 # Go to the settings repository directory
 cd "$SETTINGS_REPO_DIR"
 
 # Git add, commit, and push the new Brewfile
-git add Brewfile
-git commit -m "Update Brewfile backup: $(date +'%Y-%m-%d %H:%M:%S')"
+git add .
+git commit -m "Ran Update & Backup task: $(date +'%Y-%m-%d %H:%M:%S')"
 git push
 
 # Delete backup files older than 3 days
