@@ -12,6 +12,9 @@ brew update
 # Upgrade installed formulae
 brew upgrade
 
+# Upgrade apps installed via mac app store
+mas upgrade # Learn more here -> https://github.com/mas-cli/mas
+
 # Backup existing Brewfile
 mv "$BREWFILE_DIR/Brewfile" "$BREWFILE_DIR/OLDBrewfile_$(date +'%Y%m%d')"
 
