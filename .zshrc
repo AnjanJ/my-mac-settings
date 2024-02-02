@@ -28,7 +28,6 @@ alias canc='can && rc'
 alias ccan='can && code .'
 alias rmopen='open -a "RubyMine"'
 
-
 # Fig postblock ends
 
 # Fig post block. Keep at the bottom of this file.
