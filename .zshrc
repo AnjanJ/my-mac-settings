@@ -10,6 +10,10 @@ eval "$(nodenv init -)"
 
 nodenv global 18.19.0
 
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+
 
 # Aliases
 # rails

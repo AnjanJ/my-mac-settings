@@ -21,7 +21,7 @@ brew "go"
 brew "ical-buddy"
 brew "shared-mime-info"
 brew "libtool"
-brew "libffi"
+brew "libffi", link: true
 brew "libxmlsec1"
 brew "libyaml"
 brew "sqlite"
@@ -35,6 +35,7 @@ brew "nodenv"
 brew "nvm"
 brew "opensearch", restart_service: true
 brew "postgresql@14", restart_service: true
+brew "pyenv"
 brew "rbenv"
 brew "redis", restart_service: true
 brew "ruby-install"
@@ -51,7 +52,6 @@ cask "aldente"
 cask "arc"
 cask "authy"
 cask "cheatsheet"
-cask "cron"
 cask "datagrip"
 cask "discord"
 cask "duckduckgo"
@@ -81,6 +81,7 @@ cask "microsoft-auto-update"
 cask "microsoft-edge"
 cask "mullvadvpn"
 cask "notion"
+cask "notion-calendar"
 cask "obsidian"
 cask "oracle-jdk"
 cask "orion"
@@ -120,9 +121,11 @@ mas "Keynote", id: 409183694
 mas "Menu Bar Calendar", id: 1558360383
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "reMarkable", id: 1276493162
 mas "Save to Pocket", id: 1477385213
 mas "Save to Raindrop.io", id: 1549370672
 mas "Spaced", id: 1666327168
+mas "TextSniper", id: 1528890965
 mas "Tot", id: 1491071483
 vscode "aaron-bond.better-comments"
 vscode "adpyke.codesnap"
