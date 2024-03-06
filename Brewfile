@@ -112,6 +112,7 @@ mas "2FAS - Two Factor Authentication Extension", id: 6443941139
 mas "Aiko", id: 1672085276
 mas "Amazing AI", id: 1660147028
 mas "Bandwidth+", id: 490461369
+mas "Budget Flow", id: 1640091876
 mas "Dashlane", id: 517914548
 mas "GarageBand", id: 682658836
 mas "Habitify", id: 1111447047
@@ -121,8 +122,10 @@ mas "iMovie", id: 408981434
 mas "iStat Menus", id: 1319778037
 mas "Keynote", id: 409183694
 mas "Menu Bar Calendar", id: 1558360383
+mas "Microsoft Remote Desktop", id: 1295203466
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Portal", id: 1436994560
 mas "reMarkable", id: 1276493162
 mas "Save to Pocket", id: 1477385213
 mas "Save to Raindrop.io", id: 1549370672

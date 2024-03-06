@@ -16,10 +16,16 @@ eval "$(pyenv init --path)"
 
 
 # Aliases
+alias rmopen='open -a "RubyMine"'
+
 # rails
 alias rs='rails server'
 alias rc='rails console'
-alias rslti='rails server - 4000'
+alias rslti='rails server -p 4000'
+alias devmig='bin/rails db:migrate RAILS_ENV=development'
+alias testmig='bin/rails db:migrate RAILS_ENV=test'
+alias deljob='bundle exec script/delayed_job run'
+alias skiq='bundle exec sidekiq'
 
 # directory
 alias work='cd ~/work/code'
@@ -30,7 +36,6 @@ alias lti='cd ~/work/code/LTIs'
 alias cans='can && rs'
 alias canc='can && rc'
 alias ccan='can && code .'
-alias rmopen='open -a "RubyMine"'
 
 # Fig postblock ends
 
