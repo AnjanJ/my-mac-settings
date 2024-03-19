@@ -17,6 +17,7 @@ eval "$(pyenv init --path)"
 
 # Aliases
 alias rmopen='open -a "RubyMine"'
+alias delpid='cd /opt/homebrew/var/postgresql@14 && rm -rf postmaster.pid'
 
 # rails
 alias rs='rails server'
