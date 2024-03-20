@@ -38,9 +38,7 @@ alias cans='can && rs'
 alias canc='can && rc'
 alias ccan='can && code .'
 
-# Fig postblock ends
-
-
+# Fig sunsetting, export plugins and etc.
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
 # CodeWhisperer post block. Keep at the bottom of this file.

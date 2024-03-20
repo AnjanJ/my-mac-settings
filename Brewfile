@@ -42,7 +42,6 @@ brew "rbenv"
 brew "redis", restart_service: true
 brew "ruby-install"
 brew "rust"
-brew "starship"
 brew "tree"
 brew "vips"
 brew "wget"
