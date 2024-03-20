@@ -42,11 +42,35 @@ install_latest_node() {
     npm install --global yarn
 }
 
+# function to copy .fig-export directory
+copy_fig_export() {
+    echo "Copying fig dir to ~/fig-export"
+
+    # Ensure script has execution permissions
+    echo "Giving the script required permissions"
+    chmod +x copy_fig_export.sh
+
+    # Execute the script
+    echo "Executing the script"
+    ./copy_fig_export.sh
+}
+
+# Function to copy .zshrc to the home directory
+copy_zshrc() {
+    echo "Backing up existing .zshrc to .zshrc.backup..."
+    cp ~/.zshrc ~/.zshrc.backup
+
+    echo "Copying new .zshrc to the home directory..."
+    cp .zshrc ~/
+    echo ".zshrc copied successfully."
+}
 
 # Main Script Execution
 install_homebrew
 setup_environment
 install_latest_ruby
 install_latest_node
+copy_fig_export
+copy_zshrc
 
 echo "Development environment setup complete."
