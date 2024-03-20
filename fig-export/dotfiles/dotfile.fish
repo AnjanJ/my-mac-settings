@@ -1,0 +1,13 @@
+### ohmyzsh is not supported by fish
+### zsh-autosuggestions is not supported by fish
+### zsh-syntax-highlighting is not supported by fish
+### zsh-you-should-use_MichaelAquilina is not supported by fish
+### zsh-completions is not supported by fish
+### spaceship-prompt is not supported by fish
+### git-aliases_mdumitru is not supported by fish
+### git-open is not supported by fish
+### mysql-colorize_zpm-zsh is not supported by fish
+### colorize_zpm-zsh is not supported by fish
+### elixir-oh-my-zsh_gusaiani is not supported by fish
+### git-extra-commands_unixorn is not supported by fish
+### zsh-extract_le0me55i is not supported by fish
