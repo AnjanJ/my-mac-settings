@@ -126,7 +126,6 @@ mas "Menu Bar Calendar", id: 1558360383
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Portal", id: 1436994560
 mas "reMarkable", id: 1276493162
 mas "Save to Pocket", id: 1477385213
 mas "Save to Raindrop.io", id: 1549370672
