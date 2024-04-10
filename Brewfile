@@ -41,6 +41,7 @@ brew "pyenv"
 brew "rbenv"
 brew "redis", restart_service: true
 brew "ruby-install"
+brew "rubyfmt"
 brew "rust"
 brew "tree"
 brew "vips"
