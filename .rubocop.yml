@@ -1,0 +1,506 @@
+require:
+  - rubocop-factory_bot
+  - rubocop-graphql
+  - rubocop-rails
+  - rubocop-rake
+  # this odd relative path is so that rubocop works when run without "bundle
+  # exec", such as from most editors/IDEs.
+  - ./gems/rubocop-canvas/lib/rubocop_canvas
+  - outrigger/cops/migration/tagged
+
+inherit_gem:
+  rubocop-inst:
+    - rubocop.yml
+    - rubocop-rspec.yml
+
+AllCops:
+  TargetRubyVersion: 3.1
+
+Bundler:
+  Severity: error
+
+Capybara:
+  Enabled: false # we don't use capybara (it's automatically included by rubocop-rspec until they hit 3.0)
+
+Gemspec:
+  Severity: error
+Gemspec/RequireMFA:
+  Enabled: false # gems hosted in this repo aren't meant to be published separately
+Gemspec/RequiredRubyVersion:
+  # all the gemspecs in this repo are non-published gems
+  # the root Gemfile enforces the Ruby version, and we purposely
+  # don't specify required_ruby_version in the rest to reduce
+  # maintenance pain when updating ruby versions
+  Enabled: false
+
+GraphQL/ArgumentDescription:
+  Enabled: false
+GraphQL/FieldDescription:
+  Enabled: false
+GraphQL/FieldDefinitions:
+  Enabled: false # we group field definitions with their implementation method
+GraphQL/ObjectDescription:
+  Enabled: false
+GraphQL/ResolverMethodLength:
+  Enabled: false # this is a Metrics-style cop
+
+Layout:
+  Severity: error
+
+Lint:
+  Severity: error
+Lint/AmbiguousBlockAssociation:
+  AllowedMethods:
+    - change
+    - not_change
+    - raise_error
+Lint/NoFileUtilsRmRf:
+  Severity: warning # intended for specs; not enforced
+Lint/NoSleep:
+  Severity: warning # intended for specs; not enforced
+Lint/NonLocalExitFromIterator:
+  Enabled: false # SnR is too low because of how often this construct is used
+Lint/RedundantCopDisableDirective:
+  Enabled: false # can't have this enabled until https://github.com/rubocop/rubocop/issues/10263
+Lint/SafeNavigationConsistency:
+  Enabled: false # https://github.com/rubocop/rubocop/issues/9816
+
+Migration/Tagged:
+  AllowedTags:
+    - predeploy
+    - postdeploy
+    - cassandra
+    - dynamodb
+
+Naming:
+  Severity: error
+Naming/FileName:
+  Exclude:
+    - '**/Gemfile.d/~after.rb'
+    - '**/urn_*.rb'
+    - '**/fixtures/**/*.rb'
+    - 'config/environments/*-*.rb'
+    - 'config/locales/*.rb' # names must match locale names
+    - 'spec/selenium/a11y_and_i18n/localized-timezone-lists_spec.rb' # matches JS file it tests
+
+Performance:
+  Severity: error
+Performance/CollectionLiteralInLoop:
+  Severity: convention # not auto-correctable; can be a pain to fix and isn't necessarily performance critical
+Performance/MethodObjectAsBlock:
+  Enabled: false # decreases expressiveness
+
+Rails:
+  Severity: error
+  Exclude:
+    - 'bin/**/*'
+    - 'gems/google_drive/**/*'
+Rails/ApplicationRecord:
+  Enabled: false # we never bothered creating an ApplicationRecord
+Rails/Blank:
+  UnlessPresent: false # allow `unless foo.present?`
+Rails/ContentTag:
+  Exclude:
+    - '**/db/migrate/*' # this cop is for views, not migrations, where it gets confused with outrigger
+    - 'doc/**/*'
+Rails/DefaultScope:
+  Enabled: true
+Rails/DynamicFindBy:
+  AllowedMethods:
+    - find_by_confirmation_code # CommunicationChannel
+    - find_by_signature # AssetSignature
+    - find_by_domain # Account
+    - find_by_name # PluginSetting
+    - find_by_asset_string # ApplicationRecord
+    - find_by_pseudonym_credentials # SessionPersistenceToken
+    - find_by_quiz # Quizzes::OutstandingQuizSubmissionManager
+Rails/HasManyOrHasOneDependent:
+  Enabled: false # legacy code + most things we soft delete anyway
+Rails/HelperInstanceVariable:
+  Enabled: false # legacy code
+Rails/I18nLocaleTexts:
+  Exclude:
+    - spec/**/*.rb
+    - '**/spec_canvas/**/*.rb'
+Rails/NegateInclude:
+  Enabled: false # exclude? isn't as intuitive as !include?
+Rails/Present:
+  UnlessBlank: false # allow `unless foo.blank?`
+Rails/RedundantPresenceValidationOnBelongsTo:
+  Enabled:
+    false # we do _not_ have config.active_record.belongs_to_required_by_default set
+    # even though it's been a default since Rails 5.0, we don't have a
+    # config.load_defaults line
+Rails/SkipsModelValidations:
+  Enabled: false # Canvas skips validations in many places for optimization reasons
+Rails/WhereExists:
+  EnforcedStyle: where
+Rails/WhereNotWithMultipleConditions:
+  Enabled: false # We're firmly on Rails 6.1+; no need to worry about legacy behavior
+
+RSpec:
+  Severity: error
+RSpec/AnyInstance:
+  Enabled: false # while using an instance double would be preferable, it's a pain
+RSpec/FilePath:
+  Enabled: false # superceded by RSpec/SpecFilePathSuffix and RSpec/SpecFilePathFormat
+RSpec/IndexedLet:
+  Enabled: false
+RSpec/InstanceVariable:
+  Enabled: false # legacy code
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false # complicated setup is sometimes necessary
+RSpec/SubjectStub:
+  Enabled: false # yes, canvas is big and complicated sometimes
+
+RSpec/Capybara:
+  Enabled: false # we don't use capybara
+
+RSpec/Rails:
+  Severity: error
+
+Security:
+  Severity: error
+Security/YAMLLoad:
+  # technically even YAML.load is fairly safe in Canvas because we override it and only allow certain types
+  # but still avoid it if you can.
+  Severity: warning
+  AutoCorrect: false
+
+Specs/EnsureSpecExtension:
+  Exclude:
+    - spec/shared_examples/**/*
+
+Style:
+  Severity: error
+Style/BlockDelimiters:
+  AllowedMethods: []
+Style/Documentation:
+  Enabled: false # most things don't need to be documented
+Style/DoubleNegation:
+  Enabled: false # we use double negation, even outside of return context, to get an actual true/false for various API results
+Style/FetchEnvVar:
+  Enabled: false # ENV vars are generally all optional, and it's expected to return nil
+Style/FloatDivision:
+  Enabled: false # inherently dangerous cop because the args may not even be integers, and only upside is maybe saving 4 characters
+Style/FormatStringToken:
+  Enabled: false # I18n requires template style, but ohter code uses annotated style, and there are some trivial unannotted that don't really need to be annotated
+Style/HashLikeCase:
+  Enabled: false
+Style/IfUnlessModifier:
+  # see also https://github.com/rubocop/rubocop/discussions/10048
+  Enabled: false # can obscure important decisions or put too much code in a line
+Style/MultilineBlockChain:
+  Enabled: false # this is common when building up a large API result
+Style/NumericPredicate:
+  Enabled: false # `> 0` can be easier to read than `.positive?`
+Style/OpenStructUse:
+  Severity: warning # unfortunately, legacy code uses it a lot;
+Style/ParallelAssignment:
+  Enabled: false # most uses are legitimate deconstruction or value swapping
+Style/ReturnNil:
+  Enabled: false # explicit nil is okay when a method is expected to have a return value
+Style/SoleNestedConditional:
+  AllowModifier: true # it makes lines too long and complicated otherwise
+Style/SpecialGlobalVars:
+  Enabled: false # $! and $? are fine
+Style/SymbolArray:
+  MinSize: 3
+Style/WhileUntilModifier:
+  Enabled: false # nontrivial loops should look like loops
+Style/WordArray:
+  MinSize: 3
+
+# the following cops have offenses in the code base that have not been fixed.
+# we should eventually either fix them, or turn them off completely (and move
+# them to the section above)
+# auto-correct needs to be disabled for any that support it in the meantime
+
+FactoryBot/ConsistentParenthesesStyle:
+  AutoCorrect: false
+FactoryBot/CreateList:
+  AutoCorrect: false
+FactoryBot/SyntaxMethods:
+  AutoCorrect: false
+
+GraphQL/FieldMethod:
+  AutoCorrect: false
+GraphQL/FieldName:
+  AutoCorrect: false
+GraphQL/MultipleFieldDefinitions:
+  AutoCorrect: false
+GraphQL/OrderedArguments:
+  AutoCorrect: false
+GraphQL/OrderedFields:
+  AutoCorrect: false
+GraphQL/UnusedArgument:
+  AutoCorrect: false
+
+Layout/LineLength:
+  Enabled: false
+  AutoCorrect: false
+
+Lint/UriEscapeUnescape:
+  Severity: warning
+
+Naming/AccessorMethodName:
+  Severity: convention
+Naming/BinaryOperatorParameterName:
+  Severity: convention
+  AutoCorrect: false
+Naming/BlockParameterName:
+  Severity: convention
+Naming/ClassAndModuleCamelCase:
+  Severity: convention
+Naming/ConstantName:
+  Severity: convention
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: optional
+  Severity: convention
+  AutoCorrect: false
+Naming/MethodName:
+  Severity: convention
+Naming/MethodParameterName:
+  Severity: convention
+Naming/PredicateName:
+  Severity: convention
+Naming/VariableName:
+  Severity: convention
+Naming/VariableNumber:
+  Enabled: false
+
+Rails/ActionControllerFlashBeforeRender:
+  Severity: convention
+  AutoCorrect: false
+Rails/ActionOrder:
+  Severity: convention
+  AutoCorrect: false
+Rails/ActiveRecordCallbacksOrder:
+  Severity: convention
+  AutoCorrect: false
+Rails/ActiveRecordOverride:
+  Severity: convention
+Rails/ActiveSupportOnLoad:
+  Severity: convention
+  AutoCorrect: false
+Rails/ApplicationMailer:
+  Severity: convention
+  AutoCorrect: false
+Rails/BelongsTo:
+  Severity: convention
+  AutoCorrect: false
+Rails/BulkChangeTable:
+  Severity: convention
+Rails/CreateTableWithTimestamps:
+  Severity: convention
+Rails/Date:
+  Enabled: false
+  AutoCorrect: false
+Rails/DeprecatedActiveModelErrorsMethods:
+  AutoCorrect: false
+Rails/DuplicateAssociation:
+  AutoCorrect: false
+Rails/EagerEvaluationLogMessage:
+  Severity: convention
+  AutoCorrect: false
+Rails/EnumHash:
+  Severity: convention
+  AutoCorrect: false
+Rails/FindBy:
+  Severity: convention
+  AutoCorrect: false
+Rails/FindById:
+  Severity: convention
+  AutoCorrect: false
+Rails/FindEach:
+  Severity: convention
+  AutoCorrect: false
+Rails/InverseOf:
+  Severity: convention
+Rails/LexicallyScopedActionFilter:
+  Severity: convention
+Rails/NotNullColumn:
+  Severity: convention
+Rails/Output:
+  Severity: convention
+  AutoCorrect: false
+Rails/OutputSafety:
+  Severity: convention
+Rails/Pick:
+  Severity: convention
+  AutoCorrect: false
+Rails/PluckInWhere:
+  Severity: convention
+  AutoCorrect: false
+Rails/RakeEnvironment:
+  Severity: convention
+  AutoCorrect: false
+Rails/ReadWriteAttribute:
+  Enabled: false # accessors are often defined in terms of read_attribute
+  AutoCorrect: false
+Rails/ReversibleMigration:
+  Severity: convention
+Rails/TimeZone:
+  Enabled: false
+  AutoCorrect: false
+Rails/TimeZoneAssignment:
+  Severity: convention
+
+Rake/Desc:
+  Severity: convention
+  AutoCorrect: false
+Rake/MethodDefinitionInTask:
+  Severity: convention
+
+RSpec/AroundBlock:
+  Severity: convention
+RSpec/Be:
+  Severity: convention
+RSpec/BeforeAfterAll:
+  Severity: convention
+RSpec/ContextMethod:
+  Severity: convention
+  AutoCorrect: false
+RSpec/ContextWording:
+  Enabled: false
+RSpec/DescribeClass:
+  Enabled: false
+RSpec/DescribeMethod:
+  Severity: convention
+RSpec/ExpectActual:
+  Severity: convention
+  AutoCorrect: false
+RSpec/ExpectChange:
+  Enabled: false
+  AutoCorrect: false
+RSpec/SpecFilePathFormat:
+  Severity: convention
+RSpec/HooksBeforeExamples:
+  Severity: convention
+  AutoCorrect: false
+RSpec/IdenticalEqualityAssertion:
+  Severity: convention
+RSpec/ImplicitBlockExpectation:
+  Severity: convention
+RSpec/ImplicitExpect:
+  Severity: convention
+  AutoCorrect: false
+RSpec/IteratedExpectation:
+  Severity: convention
+RSpec/LeakyConstantDeclaration:
+  Severity: convention
+RSpec/LetSetup:
+  Severity: convention
+RSpec/MessageChain:
+  Severity: convention
+RSpec/MissingExampleGroupArgument:
+  Severity: convention
+RSpec/MultipleDescribes:
+  Severity: convention
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/NotToNot:
+  Enabled: false
+  AutoCorrect: false
+RSpec/OverwritingSetup:
+  Severity: convention
+RSpec/PendingWithoutReason:
+  Severity: convention
+RSpec/PredicateMatcher:
+  Enabled: false
+  AutoCorrect: false
+RSpec/ReceiveCounts:
+  Severity: convention
+  AutoCorrect: false
+RSpec/ReturnFromStub:
+  Severity: convention
+  AutoCorrect: false
+RSpec/ScatteredLet:
+  Severity: convention
+  AutoCorrect: false
+RSpec/ScatteredSetup:
+  Enabled: false
+RSpec/SharedContext:
+  Severity: convention
+  AutoCorrect: false
+RSpec/SubjectDeclaration:
+  Severity: convention
+RSpec/VariableName:
+  Severity: convention
+RSpec/VerifiedDoubleReference:
+  Enabled: false
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+Style/AccessModifierDeclarations:
+  Severity: convention
+Style/AccessorGrouping:
+  Severity: convention
+  AutoCorrect: false
+Style/CaseLikeIf:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+  AutoCorrect: false
+Style/ClassVars:
+  Severity: convention
+Style/CombinableLoops:
+  Severity: convention
+  AutoCorrect: false
+Style/CommentedKeyword:
+  Severity: convention
+  AutoCorrect: false
+Style/DocumentDynamicEvalDefinition:
+  Severity: convention
+Style/ExponentialNotation:
+  Severity: convention
+Style/FormatString:
+  Severity: convention
+  AutoCorrect: false
+Style/GlobalVars:
+  AllowedVariables:
+    - $canvas_rails
+  Severity: convention
+Style/GuardClause:
+  Enabled: false
+Style/HashAsLastArrayItem:
+  Severity: convention
+  AutoCorrect: false
+Style/InfiniteLoop:
+  Severity: convention
+  AutoCorrect: false
+Style/KeywordParametersOrder:
+  Severity: convention
+  AutoCorrect: false
+Style/MissingRespondToMissing:
+  Severity: convention
+Style/MixinUsage:
+  Severity: convention
+Style/ModuleFunction:
+  Severity: convention
+  AutoCorrect: false
+Style/MultipleComparison:
+  Severity: convention
+  AutoCorrect: false
+Style/OptionalArguments:
+  Severity: convention
+Style/OptionalBooleanParameter:
+  Severity: convention
+Style/RescueModifier:
+  Severity: warning
+  AutoCorrect: false
+Style/StringConcatenation:
+  Enabled: false
+  AutoCorrect: false
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+  AutoCorrect: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+  AutoCorrect: false
+Style/TrailingUnderscoreVariable:
+  Severity: convention
+  AutoCorrect: false
+Style/WhileUntilDo:
+  Severity: convention
+  AutoCorrect: false
