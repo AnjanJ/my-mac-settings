@@ -113,7 +113,6 @@ cask "whatsapp"
 cask "zed"
 cask "zoom"
 mas "2FAS - Two Factor Authentication Extension", id: 6443941139
-mas "Aiko", id: 1672085276
 mas "Amazing AI", id: 1660147028
 mas "Bandwidth+", id: 490461369
 mas "Dashlane", id: 517914548
