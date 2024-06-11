@@ -30,9 +30,11 @@ brew "libyaml"
 brew "llm"
 brew "mas"
 brew "mysql", restart_service: true
+brew "node"
 brew "node-build"
 brew "openssl@1.1"
 brew "node@14"
+brew "nodeenv"
 brew "nodenv"
 brew "nvm"
 brew "opensearch", restart_service: true

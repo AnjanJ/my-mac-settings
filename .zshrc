@@ -6,6 +6,7 @@ export PATH="$HOME/rubyonmac:$PATH"
 
 eval "$(rbenv init - zsh)"
 
+export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
 nodenv global 18.19.0
