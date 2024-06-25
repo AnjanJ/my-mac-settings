@@ -38,6 +38,7 @@ brew "nodeenv"
 brew "nodenv"
 brew "nvm"
 brew "opensearch", restart_service: true
+brew "pipx"
 brew "postgresql@14", restart_service: true
 brew "pyenv"
 brew "rbenv"
@@ -125,6 +126,7 @@ mas "Keynote", id: 409183694
 mas "Menu Bar Calendar", id: 1558360383
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Numbers", id: 409203825
+mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
 mas "Pixea", id: 1507782672
 mas "reMarkable", id: 1276493162

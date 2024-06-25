@@ -44,3 +44,6 @@ alias ccan='can && code .'
 
 # CodeWhisperer post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+# Created by `pipx` on 2024-06-25 07:15:36
+export PATH="$PATH:/Users/aj/.local/bin"
+if [ -f "/Users/aj/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/aj/.config/fabric/fabric-bootstrap.inc"; fi
