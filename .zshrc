@@ -97,7 +97,7 @@ alias ccan='can && code .'
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Fig sunsetting, export plugins and etc.
-[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"# Created by `pipx` on 2024-06-25 07:15:36
+[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 export PATH="$PATH:/Users/aj/.local/bin"
 if [ -f "/Users/aj/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/aj/.config/fabric/fabric-bootstrap.inc"; fi
 
