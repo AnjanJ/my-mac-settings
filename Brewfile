@@ -49,7 +49,7 @@ brew "rbenv"
 brew "redis", restart_service: true
 brew "ruby-install"
 brew "rubyfmt"
-brew "rust", link: false
+brew "rust"
 brew "tree"
 brew "vips"
 brew "wget"
