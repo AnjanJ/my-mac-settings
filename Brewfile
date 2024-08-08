@@ -32,7 +32,7 @@ brew "libxmlsec1"
 brew "libyaml"
 brew "llm"
 brew "mas"
-brew "mysql", restart_service: true
+brew "mysql"
 brew "neovim"
 brew "node"
 brew "node-build"
