@@ -1,4 +1,3 @@
-tap "adoptopenjdk/openjdk"
 tap "dashlane/tap"
 tap "heroku/brew"
 tap "homebrew/bundle"
