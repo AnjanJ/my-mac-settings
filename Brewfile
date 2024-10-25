@@ -60,6 +60,7 @@ brew "heroku/brew/heroku"
 cask "alchemy"
 cask "aldente"
 cask "amethyst"
+cask "anytype"
 cask "arc"
 cask "authy"
 cask "calibre"
@@ -144,6 +145,7 @@ mas "Menu Bar Calendar", id: 1558360383
 mas "Numbers", id: 409203825
 mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
+mas "Perplexity", id: 6714467650
 mas "Pixea", id: 1507782672
 mas "Save to Pocket", id: 1477385213
 mas "Save to Raindrop.io", id: 1549370672
