@@ -116,7 +116,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 eval "$(nodenv init -)"
 
-nodenv global 20.17.0
+nodenv global 20.18.0
+
+eval "$(starship init zsh)"
 
 # Aliases
 alias rmopen='open -a "RubyMine"'
@@ -167,3 +169,10 @@ export BUNDLER_EDITOR="code --wait"
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PGUSER=postgres
+export PGDATABASE=postgres
+export PGHOST=localhost
+export PGPORT=5432

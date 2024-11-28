@@ -11,8 +11,10 @@ brew "chruby"
 brew "cmatrix"
 brew "libyaml"
 brew "commitizen"
+brew "gmp"
 brew "coreutils"
 brew "docker", link: false
+brew "libtool"
 brew "erlang"
 brew "elixir"
 brew "gdbm"
@@ -26,6 +28,7 @@ brew "libksba"
 brew "gnupg"
 brew "gnupg@2.2"
 brew "go"
+brew "shared-mime-info"
 brew "graphicsmagick"
 brew "pkgconf"
 brew "ical-buddy"
@@ -36,19 +39,16 @@ brew "libffi", link: true
 brew "libxmlsec1"
 brew "mas"
 brew "mise"
-brew "zlib"
 brew "mysql"
 brew "node"
 brew "node-build"
-brew "node@16"
+brew "node@18"
 brew "nodenv"
 brew "nvm"
 brew "opensearch", restart_service: true
-brew "openssl@1.1"
 brew "pipx"
 brew "pnpm"
 brew "postgresql@14", restart_service: true
-brew "postgresql@15"
 brew "pyenv"
 brew "rbenv"
 brew "redis", restart_service: true
@@ -76,7 +76,6 @@ cask "cheatsheet"
 cask "datagrip"
 cask "dbeaver-community"
 cask "discord"
-cask "docker"
 cask "duckduckgo"
 cask "fig"
 cask "figma"
@@ -97,7 +96,6 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro"
 cask "font-source-code-pro-for-powerline"
-cask "google-chrome"
 cask "google-drive"
 cask "imageoptim"
 cask "intellij-idea"
@@ -114,8 +112,6 @@ cask "obsidian"
 cask "oracle-jdk"
 cask "orbstack"
 cask "orion"
-cask "pieces"
-cask "pieces-os"
 cask "postico"
 cask "postman"
 cask "protonvpn"
@@ -142,18 +138,24 @@ cask "zoom"
 mas "2FAS - Two Factor Authentication Extension", id: 6443941139
 mas "Amazing AI", id: 1660147028
 mas "Bandwidth+", id: 490461369
+mas "Beaconly", id: 1520138793
+mas "Boop", id: 1518425043
 mas "Dashlane", id: 517914548
+mas "DaVinci Resolve", id: 571213070
+mas "GIPHY CAPTURE", id: 668208984
 mas "Hand Mirror", id: 1502839586
 mas "Hidden Bar", id: 1452453066
-mas "iStat Menus", id: 1319778037
 mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
 mas "LanguageTool", id: 1534275760
+mas "LocalSend", id: 1661733229
 mas "Menu Bar Calendar", id: 1558360383
 mas "Numbers", id: 409203825
 mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
 mas "Perplexity", id: 6714467650
 mas "Pixea", id: 1507782672
+mas "Prime Video", id: 545519333
 mas "Save to Pocket", id: 1477385213
 mas "Save to Raindrop.io", id: 1549370672
 mas "TextSniper", id: 1528890965
@@ -164,7 +166,6 @@ vscode "adpyke.codesnap"
 vscode "alefragnani.bookmarks"
 vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "arcticicestudio.nord-visual-studio-code"
-vscode "asvetliakov.vscode-neovim"
 vscode "batatop.terminal-auto-rename"
 vscode "bung87.rails"
 vscode "bung87.vscode-gemfile"
