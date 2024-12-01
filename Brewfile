@@ -49,6 +49,7 @@ brew "opensearch", restart_service: true
 brew "pipx"
 brew "pnpm"
 brew "postgresql@14", restart_service: true
+brew "postgresql@15", restart_service: true
 brew "pyenv"
 brew "rbenv"
 brew "redis", restart_service: true
@@ -166,6 +167,7 @@ vscode "adpyke.codesnap"
 vscode "alefragnani.bookmarks"
 vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "arcticicestudio.nord-visual-studio-code"
+vscode "asvetliakov.vscode-neovim"
 vscode "batatop.terminal-auto-rename"
 vscode "bung87.rails"
 vscode "bung87.vscode-gemfile"
@@ -232,6 +234,7 @@ vscode "streetsidesoftware.code-spell-checker"
 vscode "swellaby.rust-pack"
 vscode "switchcase.code-challenging-timer"
 vscode "tamasfe.even-better-toml"
+vscode "tomoki1207.pdf"
 vscode "ue.alphabetical-sorter"
 vscode "usernamehw.errorlens"
 vscode "vortizhe.simple-ruby-erb"

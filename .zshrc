@@ -167,8 +167,6 @@ alias ccan='can && code .'
 export EDITOR="code --wait"
 export BUNDLER_EDITOR="code --wait"
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -176,3 +174,7 @@ export PGUSER=postgres
 export PGDATABASE=postgres
 export PGHOST=localhost
 export PGPORT=5432
+
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
