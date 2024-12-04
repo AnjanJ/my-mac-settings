@@ -116,7 +116,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 eval "$(nodenv init -)"
 
-nodenv global 20.18.0
+nodenv global 23.3.0
 
 eval "$(starship init zsh)"
 

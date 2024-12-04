@@ -23,8 +23,8 @@ setup_environment() {
 # Function to install latest Ruby using rbenv
 install_latest_ruby() {
     echo "Installing the latest Ruby version using rbenv..."
-    # rbenv install $(rbenv install -l | grep -v - | tail -1)
-    # rbenv global $(rbenv install -l | grep -v - | tail -1)
+    rbenv install $(rbenv install -l | grep -v - | tail -1)
+    rbenv global $(rbenv install -l | grep -v - | tail -1)
 
     echo "Installing latest version of Rails..."
     gem install rails
@@ -68,7 +68,7 @@ copy_zshrc() {
 # Main Script Execution
 install_homebrew
 setup_environment
-# install_latest_ruby
+install_latest_ruby
 install_latest_node
 copy_fig_export
 copy_zshrc

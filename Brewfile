@@ -38,18 +38,15 @@ brew "languagetool", restart_service: true
 brew "libffi", link: true
 brew "libxmlsec1"
 brew "mas"
-brew "mise"
 brew "mysql"
 brew "node"
 brew "node-build"
-brew "node@18"
 brew "nodenv"
-brew "nvm"
 brew "opensearch", restart_service: true
 brew "pipx"
 brew "pnpm"
 brew "postgresql@14", restart_service: true
-brew "postgresql@15", restart_service: true
+brew "postgresql@15"
 brew "pyenv"
 brew "rbenv"
 brew "redis", restart_service: true
@@ -62,23 +59,18 @@ brew "vips"
 brew "wget"
 brew "wireshark"
 brew "yarn"
-brew "zsh"
 brew "dashlane/tap/dashlane-cli"
 brew "heroku/brew/heroku"
-cask "alchemy"
 cask "aldente"
 cask "amethyst"
 cask "anytype"
 cask "arc"
-cask "authy"
 cask "calibre"
 cask "chatgpt"
 cask "cheatsheet"
-cask "datagrip"
 cask "dbeaver-community"
 cask "discord"
 cask "duckduckgo"
-cask "fig"
 cask "figma"
 cask "firefox"
 cask "floorp"
@@ -97,10 +89,9 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro"
 cask "font-source-code-pro-for-powerline"
+cask "google-chrome"
 cask "google-drive"
 cask "imageoptim"
-cask "intellij-idea"
-cask "istat-menus"
 cask "keycastr"
 cask "kindle"
 cask "localsend"
@@ -137,17 +128,14 @@ cask "whatsapp"
 cask "zed"
 cask "zoom"
 mas "2FAS - Two Factor Authentication Extension", id: 6443941139
-mas "Amazing AI", id: 1660147028
 mas "Bandwidth+", id: 490461369
-mas "Beaconly", id: 1520138793
 mas "Boop", id: 1518425043
 mas "Dashlane", id: 517914548
-mas "DaVinci Resolve", id: 571213070
 mas "GIPHY CAPTURE", id: 668208984
 mas "Hand Mirror", id: 1502839586
 mas "Hidden Bar", id: 1452453066
+mas "iStat Menus", id: 1319778037
 mas "Keynote", id: 409183694
-mas "Kindle", id: 302584613
 mas "LanguageTool", id: 1534275760
 mas "LocalSend", id: 1661733229
 mas "Menu Bar Calendar", id: 1558360383
@@ -156,7 +144,6 @@ mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
 mas "Perplexity", id: 6714467650
 mas "Pixea", id: 1507782672
-mas "Prime Video", id: 545519333
 mas "Save to Pocket", id: 1477385213
 mas "Save to Raindrop.io", id: 1549370672
 mas "TextSniper", id: 1528890965
@@ -165,18 +152,13 @@ mas "Windows App", id: 1295203466
 vscode "aaron-bond.better-comments"
 vscode "adpyke.codesnap"
 vscode "alefragnani.bookmarks"
-vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "arcticicestudio.nord-visual-studio-code"
-vscode "asvetliakov.vscode-neovim"
 vscode "batatop.terminal-auto-rename"
 vscode "bung87.rails"
 vscode "bung87.vscode-gemfile"
 vscode "castwide.solargraph"
-vscode "catppuccin.catppuccin-vsc"
-vscode "catppuccin.catppuccin-vsc-icons"
 vscode "christian-kohler.npm-intellisense"
 vscode "chrmarti.regex"
-vscode "daltonmenezes.aura-theme"
 vscode "davidanson.vscode-markdownlint"
 vscode "davidpallinder.rails-test-runner"
 vscode "dbaeumer.vscode-eslint"
@@ -225,6 +207,7 @@ vscode "redhat.vscode-yaml"
 vscode "riey.erb"
 vscode "ritwickdey.liveserver"
 vscode "rust-lang.rust-analyzer"
+vscode "serayuzgur.crates"
 vscode "shd101wyy.markdown-preview-enhanced"
 vscode "shopify.ruby-extensions-pack"
 vscode "shopify.ruby-lsp"
