@@ -107,16 +107,12 @@ plugins=(git)
 
 # rbenv
 export PATH="/opt/homebrew/bin:$PATH"
-eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH="$HOME/rubyonmac:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 eval "$(nodenv init -)"
 
@@ -171,7 +167,6 @@ alias ccan='can && code .'
 export EDITOR="code --wait"
 export BUNDLER_EDITOR="code --wait"
 
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PGUSER=postgres
@@ -179,6 +174,9 @@ export PGDATABASE=postgres
 export PGHOST=localhost
 export PGPORT=5432
 
-
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+eval "$(rbenv init - zsh)"
+
+nodenv global 20.18.1
