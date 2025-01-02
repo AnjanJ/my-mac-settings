@@ -174,9 +174,8 @@ export PGDATABASE=postgres
 export PGHOST=localhost
 export PGPORT=5432
 
+eval "$(rbenv init - zsh)"
+
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
-eval "$(rbenv init - zsh)"
-
-nodenv global 20.18.1
