@@ -13,8 +13,8 @@ install_homebrew() {
 
 # Function to download Brewfile and run brew bundle
 setup_environment() {
-    echo "Downloading AJ's Awesome Brewfile..."
-    curl -O https://raw.githubusercontent.com/AnjanJ/my-mac-settings/main/Brewfile
+    # echo "Downloading AJ's Awesome Brewfile..."
+    # curl -O https://raw.githubusercontent.com/AnjanJ/my-mac-settings/main/Brewfile
 
     echo "Running brew bundle to install software..."
     brew bundle --file=Brewfile
@@ -68,9 +68,9 @@ copy_zshrc() {
 # Main Script Execution
 install_homebrew
 setup_environment
-install_latest_ruby
-install_latest_node
+# install_latest_ruby
+# install_latest_node
 copy_fig_export
-copy_zshrc
+# copy_zshrc
 
 echo "Development environment setup complete."

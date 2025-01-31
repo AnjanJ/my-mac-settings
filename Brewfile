@@ -4,22 +4,17 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "puma/puma"
 brew "advancecomp"
+brew "xz"
 brew "jpeg-xl"
 brew "automake"
-brew "openssl@3"
-brew "readline"
 brew "sqlite"
 brew "awscli"
 brew "bat"
 brew "bison"
 brew "blueutil"
 brew "brightness"
-brew "chezmoi"
-brew "chruby"
 brew "cmatrix"
-brew "libyaml"
 brew "commitizen"
-brew "gmp"
 brew "coreutils"
 brew "difftastic"
 brew "direnv"
@@ -31,11 +26,13 @@ brew "entr"
 brew "exercism"
 brew "eza"
 brew "fd"
+brew "harfbuzz"
+brew "tesseract"
+brew "ffmpeg"
 brew "gdbm"
 brew "geckodriver"
 brew "gh"
-brew "harfbuzz"
-brew "tesseract"
+brew "libidn"
 brew "ghostscript"
 brew "git"
 brew "git-gui"
@@ -46,33 +43,32 @@ brew "go"
 brew "shared-mime-info"
 brew "graphicsmagick"
 brew "graphviz"
-brew "pkgconf"
 brew "helix"
 brew "heroku"
 brew "httpie"
 brew "ical-buddy"
 brew "imagemagick"
 brew "jenv"
-brew "languagetool", restart_service: true
+brew "languagetool", restart_service: :changed
 brew "libffi", link: true
 brew "libxmlsec1"
+brew "lsd"
 brew "mas"
 brew "mysql"
 brew "node-build"
-brew "nodenv"
-brew "opensearch", restart_service: true
+brew "opensearch", restart_service: :changed
+brew "tmux"
+brew "overmind"
 brew "pdfgrep"
+brew "pgcli"
 brew "pipx"
 brew "pnpm"
-brew "postgresql@14", restart_service: true
-brew "postgresql@15"
+brew "postgresql@14", restart_service: :changed
 brew "pre-commit"
 brew "pyenv"
 brew "rbenv"
-brew "redis", restart_service: true
+brew "redis", restart_service: :changed
 brew "ripgrep"
-brew "ruby-install"
-brew "rubyfmt"
 brew "rust"
 brew "starship"
 brew "terraform"
@@ -98,6 +94,7 @@ cask "duckduckgo"
 cask "figma"
 cask "firefox"
 cask "floorp"
+cask "font-0xproto-nerd-font"
 cask "font-anonymous-pro"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
@@ -110,11 +107,14 @@ cask "font-inconsolata"
 cask "font-intel-one-mono"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-meslo-lg-nerd-font"
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro"
 cask "font-source-code-pro-for-powerline"
+cask "ghostty"
 cask "google-drive"
 cask "imageoptim"
+cask "iterm2"
 cask "keycastr"
 cask "localsend"
 cask "maccy"
@@ -129,6 +129,9 @@ cask "orion"
 cask "postico"
 cask "postman"
 cask "protonvpn"
+cask "qlcolorcode"
+cask "qlmarkdown"
+cask "quicklook-json"
 cask "raindropio"
 cask "raycast"
 cask "rubymine"
@@ -152,20 +155,23 @@ cask "zed"
 cask "zoom"
 mas "2FAS - Two Factor Authentication Extension", id: 6443941139
 mas "Bandwidth+", id: 490461369
+mas "Bitwarden", id: 1352778147
 mas "Boop", id: 1518425043
 mas "Dashlane", id: 517914548
 mas "GIPHY CAPTURE", id: 668208984
 mas "Hand Mirror", id: 1502839586
 mas "Hidden Bar", id: 1452453066
+mas "iStat Menus", id: 1319778037
 mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
 mas "LanguageTool", id: 1534275760
 mas "LocalSend", id: 1661733229
 mas "Menu Bar Calendar", id: 1558360383
+mas "Noir", id: 1592917505
 mas "Numbers", id: 409203825
 mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
 mas "Perplexity", id: 6714467650
-mas "Pixea", id: 1507782672
 mas "Save to Pocket", id: 1477385213
 mas "Save to Raindrop.io", id: 1549370672
 mas "TextSniper", id: 1528890965
@@ -236,7 +242,6 @@ vscode "redhat.vscode-yaml"
 vscode "riey.erb"
 vscode "ritwickdey.liveserver"
 vscode "rust-lang.rust-analyzer"
-vscode "serayuzgur.crates"
 vscode "shd101wyy.markdown-preview-enhanced"
 vscode "shopify.ruby-extensions-pack"
 vscode "shopify.ruby-lsp"
