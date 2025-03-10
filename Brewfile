@@ -80,6 +80,8 @@ brew "wireshark"
 brew "yarn"
 brew "dashlane/tap/dashlane-cli"
 brew "puma/puma/puma-dev"
+cask "1password"
+cask "1password-cli"
 cask "aldente"
 cask "amethyst"
 cask "anytype"
@@ -158,6 +160,7 @@ cask "whatsapp"
 cask "windsurf"
 cask "zed"
 cask "zoom"
+mas "1Password for Safari", id: 1569813296
 mas "2FAS - Two Factor Authentication Extension", id: 6443941139
 mas "Bandwidth+", id: 490461369
 mas "Bitwarden", id: 1352778147

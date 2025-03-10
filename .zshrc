@@ -37,6 +37,7 @@ alias deljob='bundle exec script/delayed_job run'
 alias skiq='bundle exec sidekiq'
 alias rspec='bundle exec rspec'
 alias dbreset='bin/rails db:drop db:create db:migrate db:seed RAILS_ENV=development'
+alias rails_tree='lsd --tree --ignore-glob "tmp" --ignore-glob "vendors" --ignore-glob "node_modules"'
 
 # React
 alias nr='npm run'
@@ -57,6 +58,10 @@ alias ..='cd ..'
 alias ll='ls -lah'
 alias gst='git status'
 alias ga='git add'
+alias gd='git diff'
+alias gcm='git commit -m'
+alias gca='git commit --amend'
+alias gcane='git commit --amend --no-edit'
 alias gc='git commit'
 alias gp='git push'
 alias gl='git log --oneline --graph --decorate'
@@ -72,7 +77,7 @@ alias htop='htop --sort-key PERCENT_CPU'
 # Remove all gems for a specific Ruby version
 alias delgems='ruby_version=$1; gem_dir=$(rbenv root)/versions/$ruby_version/lib/ruby/gems/*; rm -rf $gem_dir'
 
-# mix aliases
+# canvas aliases
 alias cans='can && rs'
 alias canc='can && rc'
 alias ccan='can && code .'
