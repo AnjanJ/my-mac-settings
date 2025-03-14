@@ -84,6 +84,7 @@ cask "1password"
 cask "1password-cli"
 cask "aldente"
 cask "amethyst"
+cask "android-studio"
 cask "anytype"
 cask "arc"
 cask "beekeeper-studio"
@@ -185,6 +186,7 @@ mas "Save to Raindrop.io", id: 1549370672
 mas "TextSniper", id: 1528890965
 mas "Tot", id: 1491071483
 mas "Windows App", id: 1295203466
+mas "Xcode", id: 497799835
 vscode "aaron-bond.better-comments"
 vscode "adpyke.codesnap"
 vscode "alefragnani.bookmarks"
@@ -199,6 +201,8 @@ vscode "catppuccin.catppuccin-vsc-icons"
 vscode "christian-kohler.npm-intellisense"
 vscode "chrmarti.regex"
 vscode "daltonmenezes.aura-theme"
+vscode "dart-code.dart-code"
+vscode "dart-code.flutter"
 vscode "davidanson.vscode-markdownlint"
 vscode "davidpallinder.rails-test-runner"
 vscode "dbaeumer.vscode-eslint"
