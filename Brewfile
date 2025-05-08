@@ -194,6 +194,7 @@ mas "Xcode", id: 497799835
 vscode "aaron-bond.better-comments"
 vscode "adpyke.codesnap"
 vscode "alefragnani.bookmarks"
+vscode "amazonwebservices.amazon-q-vscode"
 vscode "andrewbutson.vscode-openai"
 vscode "augment.vscode-augment"
 vscode "batatop.terminal-auto-rename"
