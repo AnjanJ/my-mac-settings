@@ -109,3 +109,4 @@ export LC_ALL=en_US.UTF-8
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+eval "$(rbenv init - zsh)"
