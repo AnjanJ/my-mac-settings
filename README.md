@@ -1,5 +1,8 @@
 # README for `setup_dev_env.sh` & `auto_update_Brewfile.sh`
 
+[![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/AnjanJ)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?logo=buymeacoffee)](https://buymeacoffee.com/anjanj)
+
 ## Overview
 
 `setup_dev_env.sh` is a shell script designed to automate the setup of a development environment on macOS.
@@ -120,3 +123,11 @@ By following these steps, you can effectively manage and automate your Brewfile 
 ## Conclusion
 
 This script simplifies the process of setting up a development environment on macOS, making it an efficient and hassle-free experience. Also, it helps to backup your BREWFILE, which keeps all the new apps you install using brew or the Mac App Store.
+
+---
+
+## Support
+
+If this project saves you time, consider sponsoring. It keeps development going and lets me know people are finding it useful.
+
+<a href="https://github.com/sponsors/AnjanJ" target="_blank"><img src="https://img.shields.io/badge/Sponsor_on_GitHub-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub"></a>&nbsp;&nbsp;<a href="https://www.buymeacoffee.com/anjanj" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Buy Me A Coffee"></a>
