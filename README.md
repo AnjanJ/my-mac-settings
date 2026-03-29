@@ -131,3 +131,7 @@ This script simplifies the process of setting up a development environment on ma
 If this project saves you time, consider sponsoring. It keeps development going and lets me know people are finding it useful.
 
 <a href="https://github.com/sponsors/AnjanJ" target="_blank"><img src="https://img.shields.io/badge/Sponsor_on_GitHub-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub"></a>&nbsp;&nbsp;<a href="https://www.buymeacoffee.com/anjanj" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Buy Me A Coffee"></a>
+
+---
+
+**Made with ❤️ by [Anjan](https://anjan.dev)**
